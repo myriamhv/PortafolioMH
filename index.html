@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Myriam Hernandez - Developer</title>
+    <!-- Favicon-->
+    {{> favicons}}
+    <!-- Removes # in Angular routes -->
+    <base href="/">
+    <!-- Google font -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <!-- Compiled and concatenated custom scss -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body class="text-center" data-spy="scroll" data-target="#collapsible">
+    <!-- Header-->
+    <header id="header">
+        <video autoplay loop id="bg-video">
+            <source src="./assets/res/video/bg.mp4" type="video/mp4" />
+        </video>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="svg-wrapper">
+                    <!-- only inlined svg -->
+                    {{> svg-intro }}
+                </div>
+                <div class="col-xs-12">
+                    <h1 id="name">
+            <span class="com">w</span><span class="com">w</span><span class="com">w</span><span class="com">.</span>
+            <span>MYRI</span><span class="MyriamH transparent">A</span><span class="MyriamH transparent">M</span><span class="MyriamH transparent"> </span>
+            <span>HER</span><span class="MyriamH transparent">NAN</span><span class="MyriamH transparent">DEZ</span>
+            <span class="com">.</span><span class="com">c</span><span class="com">o</span><span class="com">m</span>
+            </h1>
+                    <hr>
+                    <p><span class="lead">Full-Stack JavaScript Developer</span></p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Navbar-->
+    <div id="nav-parent" >
+        <nav class="navbar navbar-custom" id="navbar">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <!-- Collapsible button -->
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsible">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Navbar Brand -->
+                    <a class="navbar-brand" href="http://www.myriamh.com">
+                        <span><img class="img-circle" alt="MyriamH.com" src="./assets/img/xs.png">
+                  <span id="scrollFade"> Myriam Hernández <span class="half-size">Developer</span></span>
+                        </span>
+                    </a>
+                </div>
+                <!-- Collapsible -->
+                <div class="collapse navbar-collapse" id="collapsible">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a id="btn-portfolio" href="#portfolio">Portfolio</a></li>
+                        <li><a id="btn-skillset" href="#skillset">Skill Set</a></li>
+                        <li><a id="btn-experience" href="#experience">Experience</a></li>
+                        <li><a id="btn-contact" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Project section -->
+    {{> portfolio}}
+    <!-- Portfolio modal -->
+    {{> modal-portfolio}}
+    <!-- Skillset section -->
+    {{> skillset}}
+    <!-- Experience section -->
+    {{> experience}}
+    <!-- Resume modal -->
+    {{> modal-resume}}
+    <!-- Contact -->
+    <section id="contact" class="even section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2>Contact</h2>
+                    <hr class="section-hr">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1">
+                    <form id="contact-form" class="text-left" role="form">
+                        <input type="hidden" name="source" value="Portfolio" />
+                        <div class="form-group">
+                            <label for="form-name">Name</label>
+                            <input type="text" class="form-control" placeholder="Name" id="form-name" name="name">
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <label for="form-email">Email</label>
+                            <input type="email" class="form-control" placeholder="Email" id="form-email" name="email">
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <label for="form-phone">Phone</label>
+                            <input type="tel" class="form-control" placeholder="Phone" id="form-phone" name="phone">
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <label for="form-message">Message</label>
+                            <textarea rows="1" class="form-control" placeholder="Message" id="form-message" name="message"></textarea>
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <label id="captcha-gen" for="form-captcha"></label>
+                            <input type="text" id="form-captcha" class="form-control" name="captcha" placeholder="">
+                        </div>
+                        <hr>
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-lg">Send</button>
+                            <br>
+                            <div id="success"></div>
+                        </div>
+                </div>
+                </form>
+                <div id="min-email">myriam.hdez@gmail.com</div>
+            </div>
+        </div>
+        <div id="social-media">
+            <a href="https://www.linkedin.com/pub/MyriamH/82/184/b89"><img id="linkedin" src="./assets/img/social/linkedin.png"></a>&nbsp;
+            <a href="https://github.com/myriamhv"><img id="github" src="./assets/img/social/github.png"></a>&nbsp;
+            <a href="https://www.facebook.com/MyriamHernandez"><img id="facebook" src="./assets/img/social/facebook.png"></a>
+        </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer id="footer">
+        <img ng-src="{{icon}}" ng-repeat="icon in icons">
+        <small><span>Developed and designed by&nbsp;</span><a href='mailto:myriam.hdez@gmail.com'>MyriamH</a>. &copy; <script type="text/javascript">
+            var d = new Date()
+            document.write(d.getFullYear())
+            </script><span class="min-footer">. All rights reserved.</span></small>
+    </footer>
+    <!-- scripts -->
+    <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
